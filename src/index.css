@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-base: #0a0f1e;
+  --bg-card: #0f1628;
+  --bg-card-hover: #151d35;
+  --text-base: #fafaf8;
+  --text-muted: #9ca3af;
+  --border-base: #c9a84c1f;
+  --primary: #c9a84c;
+  --primary-foreground: #0a0f1e;
+  --accent: #4ecdc4;
+  --accent-foreground: #0a0f1e;
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-dark: var(--bg-base);
+  --color-dark-2: var(--bg-card);
+  --color-dark-3: var(--bg-card-hover);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-text-main: var(--text-base);
+  --color-text-dim: var(--text-muted);
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  
+  --animate-float-y: float-y 3s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s infinite;
+}
+
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(201, 168, 76, 0);
+  }
+}
+
+/* Custom visual utilities from the official portfolio design */
+.gold-gradient {
+  background-image: linear-gradient(135deg, var(--primary), #e8c97a);
+}
+
+.text-gradient {
+  background-image: linear-gradient(135deg, var(--primary), #e8c97a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.bg-dark {
+  background-color: var(--bg-base);
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'DM Mono', ui-monospace, monospace;
+}
+
+/* Custom scroll bar style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card-hover);
+  border-radius: 4px;
+  border: 2px solid var(--bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
